@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Designer - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fffefc, #f8f8f8);
+      color: #333;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background: linear-gradient(to right, #ff8a00, #e52e71);
+      color: white;
+      padding: 2rem 1.2rem;
+      text-align: center;
+      animation: fadeSlide 1.2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      animation: fadeSlide 1.2s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    header h1:hover {
+      transform: scale(1.1);
+      color: #fff8dc;
+      text-shadow: 1px 1px 10px #00000066;
+    }
+
+    .line1, .line2 {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .line1 {
+      animation-delay: 1s;
+    }
+
+    .line2 {
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #e52e71;
+    }
+
+    section {
+      margin: 1.5rem;
+      padding: 2rem 1rem;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .intro, .projects, .contact {
+      text-align: center;
+    }
+
+    .project {
+      background: #fff4e6;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .project a {
+      color: #e52e71;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .project a:hover {
+      color: #ff8a00;
+    }
+
+    .contact {
+      background: #fff0f5;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out;
+    }
+
+    .contact.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+      }
+      .menu-toggle {
+        display: block;
+        background: #ff8a00;
+        color: white;
+        border: none;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+      }
+      .menu-toggle.open + ul {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome!</h1>
+    <p class="line1">Digital yug mein aapka swagat hai 🙏</p>
+    <p class="line2">Aaj ke digital yug mein, ek sundar website se apne business ko online pehchaan dijiye.</p>
+  </header>
+
+  <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="intro">
+    <h2>Apne Business Ko Banayein Ab Digital</h2>
+    <p>"Aaj har successful business ki pehchan hoti hai uski website-aapka bhi ho ek digital face!".</p>
+    <p><strong>Ek achhi website sirf ek pehchaan nahi, balki aapke business ka digital platform hai!</strong></p>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>My Projects</h2>
+    <div class="project">
+      <h3>Project 1: M.P.jewellers Website</h3>
+      <p>Professional business display site jismein products, categories aur contact details ache UI mein present ki gayi hain.</p>
+      <p><a href="https://kmpj.online" target="_blank">Visit Website</a></p>
+    </div>
+    <div class="project">
+       <h3>Project 2: Hotel Rajeshwar Website</h3>
+      <p>Ek modern aur responsive hotel website — booking form, image gallery aur full mobile support ke saath.</p>
+      <p><a href="https://hotelrajeshwar.in" target="_blank">Visit Website</a></p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Agar aap apne business ke liye ek sundar, mobile-friendly aur impactful website banvana chahte hain, toh niche diye gaye contact details se sampark karein.</p>
+    <p><strong>👤Name:</strong> Dolly Soni</p>
+    <p><strong>📩Email:</strong> marwadidolly20@gmail.com</p>
+    <p><strong>📞Phone:</strong> 9725436311</p>
+    <p><strong>📍Location:</strong> Gadarwara M.P</p>
+  </section>
+
+  <footer>
+    &copy; 2025 — Personal Portfolio. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const button = document.querySelector('.menu-toggle');
+      const navList = document.querySelector('nav ul');
+      button.classList.toggle('open');
+      navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // 👇 Scroll animation for contact section
+    const contactSection = document.querySelector('.contact');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          contactSection.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+    observer.observe(contactSection);
+  </script>
+</body>
+</html>
