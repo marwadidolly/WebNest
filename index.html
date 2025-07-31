@@ -1,128 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Yug - Freelance Web Developer</title>
+  <title>Wildlife & Data Skills</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f7fa;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f0;
       color: #333;
     }
+
     header {
-      background: linear-gradient(135deg, #007BFF, #00C6FF);
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: linear-gradient(to right, #ffb347, #ffcc33);
       padding: 1rem;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    nav .logo {
+
+    .logo {
+      font-size: 24px;
       font-weight: bold;
-      font-size: 1.2rem;
-      color: #007BFF;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .lang-toggle {
-      cursor: pointer;
-      background: #007BFF;
-      color: white;
-      padding: 0.5rem 1rem;
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #663300;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #fff0cc, #ffe680);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #ff6600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .button {
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #ff9900;
       border: none;
       border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
     }
+
+    .button:hover {
+      background-color: #e67300;
+    }
+
     section {
       padding: 2rem;
-      transition: all 0.3s ease-in-out;
-    }
-    .content[lang="hi"] {
-      display: none;
-    }
-    footer {
-      background: #007BFF;
-      color: white;
-      padding: 1rem;
       text-align: center;
+    }
+
+    footer {
+      background-color: #ffcc80;
+      color: #663300;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
+
 <body>
-
-  <nav>
-    <div class="logo">Digital Yug</div>
-    <button class="lang-toggle" onclick="toggleLang()">हिंदी</button>
-  </nav>
-
   <header>
-    <h1 class="content" lang="en">Welcome to Digital Yug</h1>
-    <h1 class="content" lang="hi">डिजिटल युग में आपका स्वागत है</h1>
-    <p class="content" lang="en">Your one-stop solution for front-end development, UI design, and digital presence.</p>
-    <p class="content" lang="hi">फ्रंट-एंड डेवलपमेंट, UI डिज़ाइन और डिजिटल उपस्थिति के लिए आपकी एकमात्र जगह।</p>
+    <div class="logo">🦁 Wildlife • 🙏 Namaste</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#skills">Data Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section>
-    <h2 class="content" lang="en">About Me</h2>
-    <h2 class="content" lang="hi">मेरे बारे में</h2>
-    <p class="content" lang="en">I am a freelance front-end developer with skills in HTML5, CSS3, JavaScript, Bootstrap, React, and UI frameworks. I create fast, responsive, and modern websites for clients who want to stand out online.</p>
-    <p class="content" lang="hi">मैं एक फ्रीलांस फ्रंट-एंड डेवलपर हूं, जिसे HTML5, CSS3, JavaScript, Bootstrap, React और UI फ्रेमवर्क्स में महारत हासिल है। मैं ऐसे वेबसाइट्स बनाती हूं जो तेज़, उत्तरदायी और आधुनिक हों ताकि आपके व्यवसाय को ऑनलाइन पहचान मिले।</p>
+  <div class="hero" id="home" data-aos="fade-in">
+    <h1>🙏 Welcome to My Website</h1>
+    <p>Explore Wildlife Wonders and Powerful Data Skills</p>
+    <button class="button" onclick="translateToHindi()">🌐 हिंदी में देखें 🙏</button>
+  </div>
+
+  <section id="skills" data-aos="fade-up">
+    <h2>My Data Skills</h2>
+    <p>Google Sheets, Excel, Python, SQL, and more...</p>
+    <p><a href="https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_LINK" target="_blank">View Google Sheet ➜</a></p>
   </section>
 
-  <section>
-    <h2 class="content" lang="en">My Services</h2>
-    <h2 class="content" lang="hi">मेरी सेवाएं</h2>
-    <ul class="content" lang="en">
-      <li>Custom Web Design</li>
-      <li>Responsive Layouts</li>
-      <li>React Web Applications</li>
-      <li>UI/UX Design Integration</li>
-      <li>Google Sheet-based contact forms</li>
-    </ul>
-    <ul class="content" lang="hi">
-      <li>कस्टम वेब डिज़ाइन</li>
-      <li>उत्तरदायी लेआउट्स</li>
-      <li>React वेब एप्लिकेशन</li>
-      <li>UI/UX डिज़ाइन एकीकरण</li>
-      <li>Google शीट-आधारित संपर्क फ़ॉर्म</li>
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="https://kmpj.online" target="_blank">🔗 kmpj.online</a></li>
+      <li><a href="https://hotelrajeshwar" target="_blank">🔗 hotelrajeshwar</a></li>
     </ul>
   </section>
 
-  <section>
-    <h2 class="content" lang="en">Project</h2>
-    <h2 class="content" lang="hi">प्रोजेक्ट</h2>
-    <p class="content" lang="en">Here is a recent project I worked on:<br><a href="https://kmpj.online" target="_blank">Visit Project</a></p>
-    <p class="content" lang="hi">यह मेरा हाल ही में बनाया गया प्रोजेक्ट है:<br><a href="https://kmpj.online" target="_blank">प्रोजेक्ट देखें</a></p>
-  </section>
-
-  <section>
-    <h2 class="content" lang="en">Contact Me</h2>
-    <h2 class="content" lang="hi">संपर्क करें</h2>
-    <p class="content" lang="en">For any queries or project collaboration, feel free to email me at: <strong>digitallyugdev@gmail.com</strong></p>
-    <p class="content" lang="hi">यदि आपके पास कोई प्रश्न है या आप किसी प्रोजेक्ट में साथ काम करना चाहते हैं, तो इस ईमेल पर संपर्क करें: <strong>digitallyugdev@gmail.com</strong></p>
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>[Yahan par aapki contact details aayengi]</p>
   </section>
 
   <footer>
-    <p class="content" lang="en">© 2025 Digital Yug. All rights reserved.</p>
-    <p class="content" lang="hi">© 2025 डिजिटल युग. सर्वाधिकार सुरक्षित।</p>
+    <p>🙏 Dhanyavaad! Thank you for visiting. 💛</p>
   </footer>
 
   <script>
-    let currentLang = 'en';
-    function toggleLang() {
-      currentLang = currentLang === 'en' ? 'hi' : 'en';
-      document.querySelectorAll('.content').forEach(el => {
-        el.style.display = el.getAttribute('lang') === currentLang ? 'block' : 'none';
-      });
-      document.querySelector('.lang-toggle').innerText = currentLang === 'en' ? 'हिंदी' : 'English';
-    }
-    toggleLang(); // Initialize first toggle
-  </script>
+    AOS.init();
 
+    function translateToHindi() {
+      document.querySelector(".hero h1").innerText = "🙏 हमारी वेबसाइट में आपका स्वागत है";
+      document.querySelector(".hero p").innerText = "वन्यजीवन की अद्भुत दुनिया और शक्तिशाली डेटा स्किल्स की खोज करें";
+      document.querySelector(".button").innerText = "🌐 वापस अंग्रेज़ी में देखें";
+      document.querySelector(".button").onclick = translateToEnglish;
+    }
+
+    function translateToEnglish() {
+      document.querySelector(".hero h1").innerText = "🙏 Welcome to My Website";
+      document.querySelector(".hero p").innerText = "Explore Wildlife Wonders and Powerful Data Skills";
+      document.querySelector(".button").innerText = "🌐 हिंदी में देखें 🙏";
+      document.querySelector(".button").onclick = translateToHindi;
+    }
+  </script>
 </body>
+
 </html>
+
