@@ -3,245 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Designer - Portfolio</title>
+  <title>Digital Yug - Freelance Web Developer</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom right, #fffefc, #f8f8f8);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
       color: #333;
-      line-height: 1.6;
-      transition: all 0.3s ease;
     }
-
     header {
-      background: linear-gradient(to right, #ff8a00, #e52e71);
+      background: linear-gradient(135deg, #007BFF, #00C6FF);
       color: white;
-      padding: 2rem 1.2rem;
+      padding: 2rem;
       text-align: center;
-      animation: fadeSlide 1.2s ease-in-out;
     }
-
-    header h1 {
-      font-size: 2.5rem;
-      animation: fadeSlide 1.2s ease-in-out;
-      transition: transform 0.3s ease;
-    }
-
-    header h1:hover {
-      transform: scale(1.1);
-      color: #fff8dc;
-      text-shadow: 1px 1px 10px #00000066;
-    }
-
-    .line1, .line2 {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    .line1 {
-      animation-delay: 1s;
-    }
-
-    .line2 {
-      animation-delay: 2s;
-    }
-
-    @keyframes fadeSlide {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #fff;
-      padding: 0.6rem 1rem;
-      border-bottom: 1px solid #ddd;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
-    .menu-toggle {
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #007BFF;
+    }
+    .lang-toggle {
+      cursor: pointer;
+      background: #007BFF;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+    }
+    section {
+      padding: 2rem;
+      transition: all 0.3s ease-in-out;
+    }
+    .content[lang="hi"] {
       display: none;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #e52e71;
-    }
-
-    section {
-      margin: 1.5rem;
-      padding: 2rem 1rem;
-      border-radius: 10px;
-      background-color: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .intro, .projects, .contact {
-      text-align: center;
-    }
-
-    .project {
-      background: #fff4e6;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .project a {
-      color: #e52e71;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .project a:hover {
-      color: #ff8a00;
-    }
-
-    .contact {
-      background: #fff0f5;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-in-out;
-    }
-
-    .contact.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     footer {
-      background-color: #333;
+      background: #007BFF;
       color: white;
       padding: 1rem;
       text-align: center;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-      }
-      .menu-toggle {
-        display: block;
-        background: #ff8a00;
-        color: white;
-        border: none;
-        font-size: 1.2rem;
-        padding: 0.5rem;
-      }
-      .menu-toggle.open + ul {
-        display: flex;
-      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome!</h1>
-    <p class="line1">Digital yug mein aapka swagat hai 🙏</p>
-    <p class="line2">Aaj ke digital yug mein, ek sundar website se apne business ko online pehchaan dijiye.</p>
-  </header>
 
   <nav>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="logo">Digital Yug</div>
+    <button class="lang-toggle" onclick="toggleLang()">हिंदी</button>
   </nav>
 
-  <section class="intro">
-    <h2>Apne Business Ko Banayein Ab Digital</h2>
-    <p>"Aaj har successful business ki pehchan hoti hai uski website-aapka bhi ho ek digital face!".</p>
-    <p><strong>Ek achhi website sirf ek pehchaan nahi, balki aapke business ka digital platform hai!</strong></p>
+  <header>
+    <h1 class="content" lang="en">Welcome to Digital Yug</h1>
+    <h1 class="content" lang="hi">डिजिटल युग में आपका स्वागत है</h1>
+    <p class="content" lang="en">Your one-stop solution for front-end development, UI design, and digital presence.</p>
+    <p class="content" lang="hi">फ्रंट-एंड डेवलपमेंट, UI डिज़ाइन और डिजिटल उपस्थिति के लिए आपकी एकमात्र जगह।</p>
+  </header>
+
+  <section>
+    <h2 class="content" lang="en">About Me</h2>
+    <h2 class="content" lang="hi">मेरे बारे में</h2>
+    <p class="content" lang="en">I am a freelance front-end developer with skills in HTML5, CSS3, JavaScript, Bootstrap, React, and UI frameworks. I create fast, responsive, and modern websites for clients who want to stand out online.</p>
+    <p class="content" lang="hi">मैं एक फ्रीलांस फ्रंट-एंड डेवलपर हूं, जिसे HTML5, CSS3, JavaScript, Bootstrap, React और UI फ्रेमवर्क्स में महारत हासिल है। मैं ऐसे वेबसाइट्स बनाती हूं जो तेज़, उत्तरदायी और आधुनिक हों ताकि आपके व्यवसाय को ऑनलाइन पहचान मिले।</p>
   </section>
 
-  <section class="projects" id="projects">
-    <h2>My Projects</h2>
-    <div class="project">
-      <h3>Project 1: M.P.jewellers Website</h3>
-      <p>Professional business display site jismein products, categories aur contact details ache UI mein present ki gayi hain.</p>
-      <p><a href="https://kmpj.online" target="_blank">Visit Website</a></p>
-    </div>
-    <div class="project">
-       <h3>Project 2: Hotel Rajeshwar Website</h3>
-      <p>Ek modern aur responsive hotel website — booking form, image gallery aur full mobile support ke saath.</p>
-      <p><a href="https://hotelrajeshwar.in" target="_blank">Visit Website</a></p>
-    </div>
+  <section>
+    <h2 class="content" lang="en">My Services</h2>
+    <h2 class="content" lang="hi">मेरी सेवाएं</h2>
+    <ul class="content" lang="en">
+      <li>Custom Web Design</li>
+      <li>Responsive Layouts</li>
+      <li>React Web Applications</li>
+      <li>UI/UX Design Integration</li>
+      <li>Google Sheet-based contact forms</li>
+    </ul>
+    <ul class="content" lang="hi">
+      <li>कस्टम वेब डिज़ाइन</li>
+      <li>उत्तरदायी लेआउट्स</li>
+      <li>React वेब एप्लिकेशन</li>
+      <li>UI/UX डिज़ाइन एकीकरण</li>
+      <li>Google शीट-आधारित संपर्क फ़ॉर्म</li>
+    </ul>
   </section>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Agar aap apne business ke liye ek sundar, mobile-friendly aur impactful website banvana chahte hain, toh niche diye gaye contact details se sampark karein.</p>
-    <p><strong>👤Name:</strong> Dolly Soni</p>
-    <p><strong>📩Email:</strong> marwadidolly20@gmail.com</p>
-    <p><strong>📞Phone:</strong> 9725436311</p>
-    <p><strong>📍Location:</strong> Gadarwara M.P</p>
+  <section>
+    <h2 class="content" lang="en">Project</h2>
+    <h2 class="content" lang="hi">प्रोजेक्ट</h2>
+    <p class="content" lang="en">Here is a recent project I worked on:<br><a href="https://kmpj.online" target="_blank">Visit Project</a></p>
+    <p class="content" lang="hi">यह मेरा हाल ही में बनाया गया प्रोजेक्ट है:<br><a href="https://kmpj.online" target="_blank">प्रोजेक्ट देखें</a></p>
+  </section>
+
+  <section>
+    <h2 class="content" lang="en">Contact Me</h2>
+    <h2 class="content" lang="hi">संपर्क करें</h2>
+    <p class="content" lang="en">For any queries or project collaboration, feel free to email me at: <strong>digitallyugdev@gmail.com</strong></p>
+    <p class="content" lang="hi">यदि आपके पास कोई प्रश्न है या आप किसी प्रोजेक्ट में साथ काम करना चाहते हैं, तो इस ईमेल पर संपर्क करें: <strong>digitallyugdev@gmail.com</strong></p>
   </section>
 
   <footer>
-    &copy; 2025 — Personal Portfolio. All rights reserved.
+    <p class="content" lang="en">© 2025 Digital Yug. All rights reserved.</p>
+    <p class="content" lang="hi">© 2025 डिजिटल युग. सर्वाधिकार सुरक्षित।</p>
   </footer>
 
   <script>
-    function toggleMenu() {
-      const button = document.querySelector('.menu-toggle');
-      const navList = document.querySelector('nav ul');
-      button.classList.toggle('open');
-      navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
-    }
-
-    // 👇 Scroll animation for contact section
-    const contactSection = document.querySelector('.contact');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          contactSection.classList.add('visible');
-        }
+    let currentLang = 'en';
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'hi' : 'en';
+      document.querySelectorAll('.content').forEach(el => {
+        el.style.display = el.getAttribute('lang') === currentLang ? 'block' : 'none';
       });
-    }, {
-      threshold: 0.3
-    });
-    observer.observe(contactSection);
+      document.querySelector('.lang-toggle').innerText = currentLang === 'en' ? 'हिंदी' : 'English';
+    }
+    toggleLang(); // Initialize first toggle
   </script>
+
 </body>
 </html>
